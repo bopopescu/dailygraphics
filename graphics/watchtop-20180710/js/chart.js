@@ -1,7 +1,4 @@
 
-console.log(DATA);
-
-
   var chartRate = new Highcharts.Chart({
       chart: {
         renderTo: 'graphic',
@@ -17,7 +14,7 @@ console.log(DATA);
             text: null,
       },
       xAxis: {
-        categories: ["Aurora","Naperville","Elgin","Waukegan","Arlington Heights"],
+        categories: ["Aurora","Joliet","Naperville","Elgin","Waukegan","Arlington Heights"],
               labels: {
                 staggerLines: 2
             },
@@ -48,7 +45,7 @@ console.log(DATA);
       series: [ {
             name: 'Top municipalities',
             showInLegend: false,
-            data: $.map( [ DATA[0].share_plain, DATA[1].share_plain, DATA[2].share_plain, DATA[3].share_plain, DATA[4].share_plain ], function(datavalue) {
+            data: $.map( [ DATA[0].share_plain, DATA[1].share_plain, DATA[2].share_plain, DATA[3].share_plain, DATA[4].share_plain, DATA[5].share_plain  ], function(datavalue) {
               return isNaN(datavalue) ? {y:null} : parseFloat(datavalue); })
             }
        ],

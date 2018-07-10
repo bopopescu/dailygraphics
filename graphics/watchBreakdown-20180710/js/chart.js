@@ -1,4 +1,3 @@
-console.log(DATA);
 
   var chartRate = new Highcharts.Chart({
       chart: {
@@ -15,7 +14,7 @@ console.log(DATA);
             text: null,
       },
       xAxis: {
-        categories: ["Chicago","RTA","Metro East Mass<br>Transit District","Local governments",],
+        categories: ["Build Illinois Fund","Chicago","RTA","Metro East Mass<br>Transit District","Local governments",],
               labels: {
                 staggerLines: 2
             },
@@ -24,7 +23,7 @@ console.log(DATA);
             }
       },
       yAxis: {
-        tickInterval: 5000000,
+        tickInterval: 2500000,
         minorTickInterval: 'auto',
         overflow: 'justify',
         min: 0,
@@ -51,7 +50,7 @@ console.log(DATA);
       series: [{
         name: 'Tax recipients',
         showInLegend: false,
-        data: $.map( [ DATA[0].share_plain,DATA[1].share_plain,DATA[2].share_plain,DATA[3].share_plain ], function(datavalue) {
+        data: $.map( [ DATA[0].share_plain,DATA[1].share_plain,DATA[2].share_plain,DATA[3].share_plain,DATA[4].share_plain ], function(datavalue) {
           return isNaN(datavalue) ? {y:null} : parseFloat(datavalue); })
       }
     ],
