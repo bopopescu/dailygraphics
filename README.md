@@ -1,5 +1,8 @@
 https://github.com/nprapps/dailygraphics
 
+This is the Daily Herald's fork of NPR's dailygraphics Rig. It adds templates for highcharts, datatables and - eventually - leaflet maps.
+
+
 dailygraphics
 =============
 
