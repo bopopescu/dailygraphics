@@ -1,0 +1,723 @@
+/*
+**********************************************************************************************
+
+This is the Daily Herald style sheet for special projects. It modifies the responsive
+framework twitter bootstrap version 3.3.7, as well as adding some custom files.
+
+It's organized in this way:
+
+General styles
+- Body and other page-section styles
+- headlines
+- body text
+- light on dark font styles
+- image styles
+- list and link elements
+- tables
+
+Graphics styles
+
+Special uses
+- Chapters headlines and text
+- Promo boxes
+- Blockquote styles
+- teaser boxes
+- horizontal (hr) line styles
+- Slider styles
+- show/hide text on mobile
+
+Navigation
+- Top of page
+- Bottom of page
+
+**********************************************************************************************
+*/
+
+/*
+**********************************************************************************************
+General styles
+**********************************************************************************************
+*/
+
+body {
+    background: #FFF;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.42857143;
+}
+
+#creditBox {
+    background-color: #dedede;
+    padding: 5px;
+}
+
+#underfoot {
+  background-color: #006BA4;
+  height: 10px;
+}
+
+/* ***************************** */
+/* ****** headline styles ****** */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+}
+
+h2.mainhed {
+    font-family: times, Times New Roman, times-roman, serif !important;
+    font-size: 8em;
+    line-height: 1em;
+    letter-spacing: -1px;
+    color: #444;
+    padding: 0 0 0 0;
+    margin: 10px 0 0 0 !important;
+    font-weight: 100;
+    text-align:center;
+}
+
+h2.subhed {
+    font-size: 2em;
+    line-height: 1.3em;
+    color: #666;
+    padding: 0 0 0 0;
+    margin: 10px 0 0 0 !important;
+    text-align:center;
+}
+
+
+h3.breakhed {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+    font-weight:bold;
+    color: #333;
+    margin: 1.5em auto !important;
+    margin-bottom: 0px;
+    max-width: 630px;
+    overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+
+    h2.mainhed {
+        font-size: 6em;
+    }
+
+    h2.subhed {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (max-width:500px){
+
+    h2.mainhed {
+        font-size: 5em;
+    }
+
+}
+
+
+
+/* ****************************** */
+/* ****** body text styles ****** */
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.times {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+}
+
+p.serif {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+    font-size: 20px;
+    line-height: 1.35em;
+    margin: 1em auto;
+    max-width: 630px;
+    overflow-wrap: break-word;
+    color: #333;
+}
+
+
+p.serifInd {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+    font-size: 20px;
+    line-height: 1.35em;
+    margin: 1.5em auto;
+    overflow-wrap: break-word;
+    color: #333;
+}
+
+p.byline {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align:center;
+    margin:4px;
+}
+
+.credit {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:14px;
+    text-align:right;
+    margin: auto;
+}
+
+.gfxcredit {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:14px;
+    margin: auto;
+}
+
+
+/* ************************************* */
+/* ****** fonts over color styles ****** */
+
+
+/* Turns background black */
+
+.backblack {
+    width: 100%;
+    height: auto;
+    background: black;
+}
+
+/* Turns text off-white */
+.backfont {
+    color: #DDD !important;
+}
+
+
+/* ************************** */
+/* ****** image styles ****** */
+
+img.cenblock {
+    float:none !important;
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+img.block {
+    float:none !important;
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    padding-bottom:10px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .imgblock {
+        float:left;
+        margin-right: 20px;
+        display: block !important;
+        width: auto;
+        max-height: 200px;
+    }
+}
+
+/* ************************************ */
+/* ****** lists and links styles ****** */
+
+.li_position {
+            list-style-position: inside;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+/* ************************** */
+/* ****** table styles ****** */
+
+table.fullTable { width:100%; }
+td {text-align:right;}
+td.tdRIGHT {text-align:right;}
+td.tdLEFT {text-align:left;}
+td.tdCENT {text-align:center;}
+th {text-align:right;}
+th.thRIGHT {text-align:right;}
+th.thLEFT {text-align:left;}
+th.thCENT {text-align:center;}
+
+.table { font-size: 15px; }
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td{
+    padding: 1px 10px;
+}
+
+/* ******************************* */
+/* ****** datatables styles ****** */
+
+.pagination > li > a, .pagination > li > span {
+    padding:6px !important;
+}
+
+/*
+**********************************************************************************************
+Graphics styles
+**********************************************************************************************
+*/
+
+table.mapTable {
+    font-size: 1em;
+    width:200px;
+    margin-top:5px;
+}
+
+.high400 {
+    height: 400px;
+    background-color: #ffffff;
+}
+
+
+.divgfx {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    width: 100%;
+    height: 550px;
+    background-color: #ffffff;
+}
+
+.divgfx100 {
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+
+/*
+**********************************************************************************************
+Special use styles
+**********************************************************************************************
+*/
+
+/* ********************************** */
+/* ****** Chapters list styles ****** */
+
+p.chapters {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+    font-size: 16px;
+    text-align: left !important;
+    margin: 0 0 5px !important;
+}
+
+p.smallchap{
+    font-size: 75% !important;
+    margin: 0px !important;
+    line-height: 0.5 !important;
+}
+
+hr.chaps {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+    line-height: 1  !important;
+    border-top-color: #51B7CF;
+}
+
+img.floaty {
+    float: right !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+    p.chapters {
+        text-align: center !important;
+        margin: 0 0 5px !important;
+
+    }
+
+    hr.chaps {
+        width: 40%;
+    }
+
+    img.floaty {
+        float:none !important;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+/* ************************** */
+/* ****** promo box ****** */
+
+
+.advert {
+    padding: 1em 1.5em;
+    margin: 0px 15px;
+    background: none;
+    display: block !important;
+    float: right;
+    width:calc(60% - 30px);
+    max-width: 350px;
+    max-height: 250px;
+    }
+
+.promo {
+    padding: 1em 1.5em;
+    margin: 0px 15px;
+    background: #f4f4f4;
+    display: block !important;
+    float: right;
+    width:calc(60% - 30px);
+    max-width: 350px;
+    max-height: 200px;
+    }
+
+
+.sideimg {
+    padding: 1em 1.5em;
+    margin: 0px 15px;
+    background: #ffffff;
+    display: block !important;
+    float: right;
+    width:calc(60% - 30px);
+    max-width: 350px;
+    }
+
+
+@media only screen and (max-width: 768px) {
+
+    .advert {
+        max-width: 600px;
+        max-height: 250px;
+        width: 100%;
+        height: 100%;
+        float:none !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .promo {
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        height: 100%;
+        float:none !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .sideimg {
+        max-width: 350px;
+        width: 100%;
+        height: 100%;
+        float:none !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+/* *************************** */
+/* ****** quotes styles ****** */
+
+
+.quote {
+    padding: 1em 1.5em;
+    margin: 0px 15px;
+    display: block !important;
+    float: right;
+    width:calc(60% - 30px);
+    max-width: 350px;
+    }
+
+blockquote {
+    font-family: Times, times, Times New Roman, times-roman, serif !important;
+    color:#666;
+    font-size: 26px;
+    line-height: 1.35em;
+}
+
+.blocksay {
+    font-size: 18px;
+    line-height: 1.35em;
+}
+
+.imgblock {
+    display: block !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .quote {
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        height: 100%;
+        float:none !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+@media only screen and (max-width:500px){
+
+    .imgblock {
+        float:none;
+        clear:both;
+    }
+}
+
+
+/* ******************************* */
+/* ****** teaser box styles ****** */
+
+.teaz {
+    max-width: 630px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* ************************************ */
+/* ****** horizontal line styles ****** */
+
+hr.fancy {
+  border: 0;
+  height: 2px;
+  /* background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(15, 146, 177, 1), rgba(0,0,0,0)); */
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+}
+
+
+hr.by-line {
+  border: 0;
+  height: 2px;
+  /* background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(15, 146, 177, 1), rgba(0,0,0,0)); */
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0, 107, 164, 1), rgba(0,0,0,0));
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+hr.hard {
+    border: 0;
+    height: 1px;
+    background-color:#444;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+/* ************************************ */
+/* ****** bootstrap hack: fix content
+          width inside hidden tabs **** */
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block;     /* undo display:none          */
+    height: 0;          /* height:0 is also invisible */
+    overflow-y: hidden; /* no-overflow                */
+}
+.tab-content > .active,
+.pill-content > .active {
+    height: auto;       /* let the content decide it  */
+} /* bootstrap hack end */
+
+
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+/* ************************************ */
+/* ****** Election headline *********** */
+
+
+h2.elexhdd {
+    font-family: times, Times New Roman, times-roman, georgia, serif !important;
+    font-size: 4em;
+    line-height: 1em;
+    letter-spacing: -1px;
+    color: #444;
+]   padding: 0 0 0 0;
+    margin: 10px 0 0 0;
+    font-weight: 100;
+}
+
+/* ************************************ */
+/* ****** Slider styles *************** */
+
+.slidesize {
+  margin: 0px 25px;
+}
+.slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all ease-in-out .3s;
+  /* margin-right: auto;
+  margin-left: auto; */
+}
+.slider img {
+  width: 100%;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+.slick-active {
+  opacity: .5;
+}
+.slick-current {
+  opacity: 1;
+}
+
+/* ************************************ */
+/* ****** mobile text ***************** */
+
+  .mobtext {
+    display: none;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .mobtext {
+      display: block;
+    }
+  }
+
+/*
+**********************************************************************************************
+Navigation styles
+**********************************************************************************************
+*/
+
+
+/* ************************************ */
+/* ****** Top page nav styles ****** */
+
+
+.navbar.navbar-default {
+    background-image:none;
+    background-color:black !important;
+    border:none;
+    border-color:none !important;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.navbar.navbar-default .navbar-text {
+  color: #999999;
+}
+
+.navbar.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar.navbar-default .navbar-brand:hover,
+.navbar.navbar-default .navbar-brand:focus {
+    color: #006BA4;
+}
+
+.navbar.navbar-default .navbar-nav > li > a {
+    color: #999999;
+}
+
+.navbar.navbar-default .navbar-nav > li > a:hover,
+.navbar.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #006BA4;
+}
+
+.navbar.navbar-default .navbar-nav > .active > a,
+.navbar.navbar-default .navbar-nav > .active > a:hover,
+.navbar.navbar-default .navbar-nav > .active > a:focus {
+    background-image:none;
+    color: white;
+    background-color: #006BA4;
+}
+
+.navbar.navbar-default .navbar-nav > .open > a,
+.navbar.navbar-default .navbar-nav > .open > a:hover,
+.navbar.navbar-default .navbar-nav > .open > a:focus {
+  color: black;
+  background-color: #ffffff;
+}
+
+.navbar.navbar-default .navbar-toggle {
+  border-color: black;
+}
+
+.navbar.navbar-default .navbar-toggle:hover,
+.navbar.navbar-default .navbar-toggle:focus {
+  background-color: #006BA4;
+}
+
+.navbar.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar.navbar-default .navbar-collapse,
+.navbar.navbar-default .navbar-form {
+  border:none;
+}
+.navbar.navbar-default .navbar-link {
+  color: red;
+}
+.navbar.navbar-default .navbar-link:hover {
+  color: red;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #999999;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: white;
+    background-image:none;
+    background-color: #006BA4 !important;
+
+}
+
+.banner {
+    width: 100%;
+    /*background-color: #c3d7df;*/
+}
+
+.banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (min-width:768px) and (max-width:991px){
+  .container.navbar-container {
+     width:100%;
+     padding:0;
+  }
+}
+
+
+/* ************************************ */
+/* ****** Bottom page nav styles ****** */
+
+.navbottom {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #999999;
+    text-align:center;
+}
+
+.navbottom a {
+    color:#333;
+}
+
+.navbottom a:hover,
+.navbottom a:focus {
+    color: #006BA4;
+    font-weight:bold;
+    border-bottom:none;
+}

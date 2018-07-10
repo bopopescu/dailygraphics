@@ -1,0 +1,100 @@
+{% extends 'baseDH_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      responsive: true,
+      "order": [[ 3, "desc" ]],
+      "iDisplayLength": 10
+      } );
+} );
+
+</script>
+
+<!-- **************************** -->
+<!-- *** standalone branding **** -->
+
+{% include 'headers/brand.html' %}
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column headings, or <span style="color:red">look for your local government</span> using the search box. You can also <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='1'>Local Governments</th>
+        <th data-priority='3'>Population</th>
+        <th data-priority='4'>Pop. pct.</th>
+        <th data-priority='2'>Estimated<br>tax share</th>
+      </thead>
+      <tbody>
+
+        {% for row in COPY.data %}
+        <tr>
+            <td class="tdLEFT">{{ row.gov }}</td>
+            <td>{{ row.Population }}</td>
+            <td>{{ row.poppct }}</td>
+            <td>{{ row.share }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</p>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+        <!-- **************************** -->
+        <!-- *** Standalone gfx footer ** -->
+
+                </div>
+              </div>
+            </div>
+            <br>
+        {% include 'footers/footer.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

@@ -1,0 +1,121 @@
+{% extends 'baseDH_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+console.log(DATA);
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      responsive: true,
+      "order": [[ 0, "asc" ]],
+      "iDisplayLength": 10
+      } );
+} );
+
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+<!-- **************************** -->
+<!-- *** standalone branding **** -->
+
+{% include 'headers/brand.html' %}
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column headings, or <span style="color:red">look for your school district</span> using the search box. You can also <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='1'>State</th>
+        <th data-priority='4'>Postal name<br>exemptions</th>
+        <th data-priority='2'>Value</th>
+      </thead>
+      <tbody>
+
+        {% for row in COPY.data %}
+        <tr>
+            <td class="tdLEFT">{{ row.state }}</td>
+            <td>{{ row.something }}</td>
+            <td>{{ row.another_thing }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</p>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+            <p class="text-center"><small><strong><span style="color:red">SCROLL GRAPHIC ABOVE FOR MORE</span></strong></small></p>
+          </div>
+        </div>
+
+        <!-- **************************** -->
+        <!-- *** Standalone gfx footer ** -->
+                <br>
+                </div>
+              </div>
+            </div>
+        {% include 'footers/footer.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

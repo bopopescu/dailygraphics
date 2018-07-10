@@ -1,0 +1,48 @@
+{% extends 'base_template.html' %}
+
+
+{% block content %}
+
+<script src="../../static/js/code/highcharts.js"></script>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+
+<script>
+  var DATA = {{ COPY.data.json() }};
+  console.log( DATA );
+</script>
+
+<style type="text/css">
+  .graphic { height:325px }
+</style>
+
+
+
+    {% if COPY.labels.headline %}<h1><strong>{{ COPY.labels.headline|smarty }}</strong></h1>{% endif %}
+    <h2>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></h2>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    <!-- {{ JS.push('js/highcharts.js') }} Must load in before chart js -->
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}
