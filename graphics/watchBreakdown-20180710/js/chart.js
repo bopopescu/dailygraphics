@@ -41,7 +41,10 @@
           series: {
             dataLabels: {
                 enabled: true,
-                format: '${y}',
+                //format: '${y}',
+                formatter: function() {
+                  return DATA[this.point.x].share;
+                },
                 align: 'right'
                 },
               stacking: 'normal'

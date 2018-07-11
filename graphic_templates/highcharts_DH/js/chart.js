@@ -40,6 +40,14 @@
       },
       plotOptions: {
           series: {
+            dataLabels: {
+                enabled: false,
+                //format: '${y}',
+                formatter: function() {
+                  return DATA[this.point.x].share;
+                },
+                align: 'right'
+                },
               stacking: 'normal'
             }
       },

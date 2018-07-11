@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Daily Herald News Art">
+<meta name="keywords" content="Daily Herald, graphics, maps, data visualization, chicago, suburbs " />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta name="image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+
+<meta property="og:title" content="Daily Herald News Art" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta property="og:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta property="og:url" content="https://i.dailyherald.com/public-service/">
+<meta name="og:site_name" content="Daily Herald News Art">
+
+<meta name="twitter:title" content="Daily Herald News Art ">
+<meta name="twitter:description" content=" Special presentations, graphics, maps and other data visualizations by the Daily Herald.">
+<meta name="twitter:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Daily Herald news art</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" />
+
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="static/bootstrap/js/bootstrap.min.js"></script> <!-- MUST -->
+
+
+    <!-- datatables -->
+
+    <link rel="stylesheet" type="text/css" href="static/datatables/css/dataTables.bootstrap.min.css">
+
+    <!-- datatables responsive -->
+    <link rel="stylesheet" type="text/css" href="static/datatables/css/responsive.bootstrap.min.css">
+
+
+    <script type="text/javascript" src="static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="static/datatables/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- datatables responsive -->
+     <script type="text/javascript" src="static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+</head>
+<body> <!-- MUST -->
+
+<!-- **************************** -->
+<!-- *** standalone branding **** -->
+
+<div>
+    <img id="DHtop" alt="Brand" src="static/img/dh2.png" class="img-responsive cenblock">
+</div>
+<div style="background-color:#006BA4; height:5px; width:100%; margin:0; padding:0;"></div>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="header">
+				<br>
+				<h2 style='width:100%; text-align:center' class='elexhdd'>Daily Herald News Art</h2>
+			</div>
+
+			<hr>
+
+			<h3><strong>Special projects</strong></h3>
+			<p><ul>
+				<li><a href="projects/2018/LastKiss/index.html" target="_blank"><strong>Last Kiss:</strong></a> A touching look at the loss of life’s partner. Although the stories have already appeared in print and online at dailyherald.com, we're working to collect the entire series into one special presentation here.</li>
+				<li><a href="https://i.dailyherald.com/public-service/2018/baseball/index.html" target="_blank"><strong>Chicago baseball:</strong></a> A little-more-than-casual but not-very-wonky statistical look at the current season. Updates each day throughout the season.</li>
+				<li><a href="http://reportcards.dailyherald.com/gfx/electest/index.html" target="_blank"><strong>Primary 2018:</strong></a> Primary election results, including detailed looks at the primaries for <a href="http://reportcards.dailyherald.com/gfx/electest/demgov.html" target="_blank">Democratic</a> and <a href="http://reportcards.dailyherald.com/gfx/electest/gopgov.html" target="_blank">Republican</a> governor. We're trying to go beyond the Associated Press results and get the very local races not available from the wire service. We've had some success (Lake, Cook, Will counties) and some where we still have more work to do (Kane, McHenry and DuPage). But we intend to be able to report complete results in November and for the local consolidated eletion in 2019.</li>
+				<li><a href="https://i.dailyherald.com/public-service/archive/2017/crashes/index.html" target="_blank"><strong>Perilous Passage:</strong></a> Pedestrian and cyclist crashes, injuries and fatalities in the six-county area.</li>
+				<li><a href="https://i.dailyherald.com/public-service/archive/2017/football/index.html" target="_blank"><strong>Friday Night Flight:</strong></a> Tracking participation in 80+ high school football programs around the suburbs.</li>
+				<li><a href="http://reportcards.dailyherald.com/" target="_blank"><strong>Annual Illinois School Report Cards:</strong></a> The only comprehensive web app by an Illinois news site that reports the scores, demographics and financials released by the state each year.</li>
+				<li><a href="http://reportcards.dailyherald.com/lowincome/index.html" target="_blank"><strong>Poverty-Acheivement Index:</strong></a> Our award-winning look at the effect of poverty on school performance.</li>
+			</ul></p>
+
+			<hr>
+
+			<h3><strong>Interactives by type and year</strong></h3>
+			<p>Chart = interactive chart or charts; Graphic = static graphic suitable for embedding; Map = interactive map; Timeline = use of <a href="https://timeline.knightlab.com/" target="_blank">Knight Labs</a> interactive timeline; List = tabular charts, most recent being sortable and responsive.</p>
+
+			<!--<div class="table-responsive">-->
+				<p><table id="gfx" class="table table-hover table-striped table-condensed"><thead><tr><th class="thLEFT">Name</th><th class="text-right">Year</th></tr></thead>
+					<tbody>
+            <tr><td class="tdLEFT"><a href="2018/soybeans/index.html" target="_blank">MAP: 2017 soybean production in Illinois.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/2018/watch_intTax/top.html" target="_blank">CHART: Top towns for online sales tax. NPR rig.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/2018/watch_intTax/breakdown.html" target="_blank">CHART: Breakdown of who gets what from online sales tax. NPR rig.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/2018/watch_intTax/index.html" target="_blank">LIST: Town’s take from online sales tax. NPR rig.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/watchSenEx/index.html" target="_blank">MAP LIST: Decrease in Senior Exemptions in Cook County.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/springrain/index.html" target="_blank">CHART: Accumulated rainfall, May through June.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/census2017/index.html" target="_blank">CHART LIST: Change in county population, 2010-2017.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/vidgam/index.html" target="_blank">MAP: Video gambling machines per 1,000.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/watch_trs/index.html" target="_blank">CHART: TRS penalty payments.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/watch_trs/watch_trsList.html" target="_blank">LIST: TRS payments by district.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/CubsSeason/sankey.html" target="_blank">CHART: Interactive chart on how Cubs do based on their May, June records.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/CubsSeason/index.html" target="_blank">GRAPHIC: How the Cubs do based on their May, June records.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/Sosa20/index.html" target="_blank">GRAPHIC: Sosa's 20 home runs in June 1998.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/MayHeat/index.html" target="_blank">GRAPHIC: High temperatures in May.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/WatchISSMA/index.html" target="_blank">GRAPHIC: School spending for lobbying groups.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/Quentin/index.html" target="_blank">GRAPHIC: Quentin Road detour.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/minorleagues/index.html" target="_blank">GRAPHIC MAP: Suburban minor league baseball teams.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/LCincident/index.html" target="_blank">GRAPHIC: Bizarre shooting incident in Lake County.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/kidk/index.html" target="_blank">GRAPHIC: Kerry Wood's 20 strikeouts.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/countyvote/index.html" target="_blank">MAP: Where the primary vote flipped - 2014 to 2018.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/opioids/index.html" target="_blank">MAP GIF: Opioid prescription rates by Illinois county, 2006-2016.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/febsnow/index.html" target="_blank">MAP: February storm snowfall estimates.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="2018/schoolShootings/index.html" target="_blank">MAP: Shootings connected with schools in 2018 before the Parkland shooting.</a></td><td class="text-right">2018</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/archive/2017/optouts/index.html" target="_blank">MAP: Tracking optouts in Cook County for new minimum wage ordinance and mandate on businesses to pay employees for sick days.</a></td><td class="text-right">2017</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/archive/2017/exemption/index.html" target="_blank">MAP: Homeowner exemptions by township.</a></td><td class="text-right">2017</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/archive/2017/ilowes/index.html" target="_blank">LIST: Vendors in the five-county area owed money by Illinois as part of their $14.7 billion bill backlog.</a></td><td class="text-right">2017</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/archive/2017/census2016/index.html" target="_blank">LIST MAP: Analysis of Census 2016 population estimates, compared to 2010 and 2014</a></td><td class="text-right">2017</td></tr>
+						<tr><td class="tdLEFT"><a href="https://i.dailyherald.com/public-service/archive/2017/schreserves/index.html" target="_blank">LIST: How much schools are holding in reserve.</a></td><td class="text-right">2017</td></tr>
+						<tr><td class="tdLEFT"><a href="http://www.dailyherald.com/article/20161230/news/161239958/" target="_blank">GRAPHIC MAP: Precinct-by-precinct analysis of the 2016 election results vs. primary results/ </a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/leadtests/index.html" target="_blank">CHART: Suburban schools lead tests</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/teachsalaries/index.html" target="_blank">CHART: Avg. teacher, admin salaries</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/olyMedals/index.html" target="_blank">CHART: Olympic medal count</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/rotation/index.html" target="_blank">GRAPHIC: O'Hare runway rotation</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/schmoney/index.html" target="_blank">LIST: State money for school districts</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/fireworks/index.html" target="_blank">MAP: Top suburban fireworks</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/liquor/index.html" target="_blank">LIST: Liquor license revenues by town</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://www.dailyherald.com/assets/jpg/Peak%20tornado%20month.jpg" target="_blank">GRAPHIC: June is peak tornado month locally</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/SDcontracts/index.html" target="_blank">LIST: School districts contract lengths</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/watchLibs/index.html" target="_blank">CHART: Library spending, materials vs. personnel</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/watchLibs/index2.html" target="_blank">LIST: Library spending, by library</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/stateError/index.html" target="_blank">LIST: Datatables version of tax error list</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/schoolsGov/index2.html" target="_blank">LIST: Datatables version of Gov. Rauner proposed school spending list</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/schoolsGov/index.html" target="_blank">LIST: Gov. Rauner proposed school spending</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/TwpReserves/index.html" target="_blank">LIST: Township road district reserves</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="https://www.dailyherald.com/article/20160404/news/160409638/" target="_blank">GRAPHIC MAP: Precinct-by-precinct results for the Democratic Primary</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="https://www.dailyherald.com/article/20160404/news/160409639/" target="_blank">GRAPHIC MAP: Precinct-by-precinct results for the Republican Primary</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="https://www.dailyherald.com/article/20160403/news/160409720/" target="_blank">GRAPHIC MAP: Precinct-by-precinct look at Democratic primary voters vs. Republican primary voters</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/pol_contrib/gop.html" target="_blank">MAP: Contributions to Republican Presidential candidates</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/pol_contrib/index.html" target="_blank">MAP: Contributions to Democratic Presidential candidates</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/remediation/index.html" target="_blank">LIST: Area high schoolers in community college remediation classes</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/fittest/teams.html" target="_blank">LIST: Fittest loser teams updates: pulls from Google sheets</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/fittest/index.html" target="_blank">LIST: Fittest loser weekly updates: pulls from google sheets</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/schtickets/index.html" target="_blank">CHART: Schaumburg ticketing, with custom tooltip</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/water/index.html" target="_blank">LIST: Suburban water quality, by agency and municipality</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/mundebt/index.html" target="_blank">LIST: Municipal debts, actual and percents</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/redlights/index2.html" target="_blank">MAP: Did crashes decrease due to red-light cameras?</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2016/redlights/index.html" target="_blank">MAP: Crashes with injuries at red-light camera intersections</a></td><td class="text-right">2016</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/babyface/index.html" target="_blank">GRAPHIC: Baby Face Nelson and the Battle of Barrington</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/glinscene/index.html" target="_blank">MAP: Gliniewicz's final moments</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/glintime/index.html" target="_blank">TIMELINE: the Gliniewicz investigation</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/lakewell/index.html" target="_blank">CHART: Lake County wellness costs</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/actlow/index.html" target="_blank">GRAPHIC: ACT results and low income</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/colready/index.html" target="_blank">GRAPHIC: PARCC, ACT college readiness comparied</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/diamond/index.html" target="_blank">GRAPHIC: Diverging diamond</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/parcc/index.html" target="_blank">GRAPHIC: Partial PARCC results</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/watchcam/index.html" target="_blank">MAP: Red light camera revenue</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/fermidune/index.html" target="_blank">GRAPHIC: Deep Underground Neutrino Experiment</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/pensiontime/index.html" target="_blank">TIMELINE: Decades of pension mismanagement</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/zion/index.html" target="_blank">MAP GRAPHIC: Zion shooting</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/distracted/index.html" target="_blank">MAP: Distracted drivers in the suburbs</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/schoolsdisb/index.html" target="_blank">MAP: School finance plan winners and losers</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2015/febsnow/index.html" target="_blank">MAP: Super Bowl blizzard</a></td><td class="text-right">2015</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/winter2014/index.html" target="_blank">CHARTS: Winter of 2014</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/holiday2014/index.html" target="_blank">MAP: Holiday lights</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/collegeready/index.html" target="_blank">LIST: College readiness</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/teletax/index.html" target="_blank">LIST: Municipal telecommunications tax</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/vidgaming/index.html" target="_blank">LIST: Video gambling revenue</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/QRside/index.html" target="_blank">LIST: Political views with jquery UI</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/metrafare/index.html" target="_blank">GRAPHIC: Metra fares</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/flight232/index.html" target="_blank">TIMELINE: Flight 232</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/watchMotor/index.html" target="_blank">LIST: Share of gas taxes</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/hazrail/index.html" target="_blank">MAP: Hazmat incidents</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/potBusiness/index.html" target="_blank">MAP: Marijuana dispensary districts</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/watchpension/index.html" target="_blank">CHART: Pensions vs. salaries</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/homeless/index2.html" target="_blank">MAP: Suburban schools with highest percent of homeless students</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/homeless/index.html" target="_blank">CHART: Increase in homeless students</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/watchreturned/index.html" target="_blank">MAP: Percent taxes returned to towns</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/lotteryZIP/index.html" target="_blank">MAP: Change in lottery sales by zip code</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/marathons50/index.html" target="_blank">MAP: 50 state marathons</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/egtif/index.html" target="_blank">MAP: Proposed Elk Grove Village TIF district</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/elgohare/index.html" target="_blank">MAP: Elgin-O'Hare Western Bypass</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/electwp/index.html" target="_blank">MAP: 2014 primary results for governor, senate</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/roads2014/index.html" target="_blank">MAP: 2014 road construction</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/oharenoise/index.html" target="_blank">MAP: O'Hare noise complaints</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/medianCOUNTY/index.html" target="_blank">MAP: Median income by county</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/twpwatch/index.html" target="_blank">MAP: Change in township property taxes</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/ILlegis/index.html" target="_blank">MAP: New Illinois legislative boundaries</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/floodins/index.html" target="_blank">MAP: Flood insurance premiums</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/hotdogs/index.html" target="_blank">MAP: Best suburban hot dogs</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/FOIAnumbers/index.html" target="_blank">LIST: Suburban FOIA requests</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/freezetime/index.html" target="_blank">TIMELINE: The search for Tom Karambelas</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/snowfall2014.html" target="_blank">CHART: Snowfall</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/Pensionbonus.html" target="_blank">CHART: Pension bonus</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/2014/janCold.html" target="_blank">CHART: January cold</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/ACTbenchmarks.html" target="_blank">LIST: ACT college readiness</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/StuPropTax.html" target="_blank">LIST: District property taxes per student</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/snow2014.html" target="_blank">CHART: Number of days with a trace of snow</a></td><td class="text-right">2014</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/schools_lowincTable.html" target="_blank">LIST: School poverty rates</a></td><td class="text-right">2013</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/watchdog1126.html" target="_blank">CHART MAP: Barrington D220 tax rebate</a></td><td class="text-right">2013</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/watchdog1113.html" target="_blank">CHART: Change in Senior Freeze tax exemption</a></td><td class="text-right">2013</td></tr>
+						<tr><td class="tdLEFT"><a href="http://reportcards.dailyherald.com/gfx/FOIDstates.html" target="_blank">MAP: FOID requirements by state</a></td><td class="text-right">2013</td></tr>
+					</tbody>
+				</table></p>
+			<!--</div>-->
+
+		</div>
+	</div>
+<!-- End of container -->
+</div>
+<script>
+$('#gfx').DataTable( {
+        "order": [[ 1, "desc" ]]
+    } );
+</script>
+
+<br><br>
+
+
+
+<div id="creditBox">
+  <div class="row">
+    <div class="col-md-12">
+      <p style="text-align:center"><small><a href="mailto:tbroderick@dailyherald.com">Tim Broderick</a> | <a href="https://i.dailyherald.com/public-service/" target="_blank">Daily Herald News Art</a> | <a href="https://github.com/dailyherald" target="_blank">Github</a><br>
+      	<a href="http://www.dailyherald.com/info/subscribe/" target="_blank">Subscribe</a> | <a href="http://www.dailyherald.com/info/terms-of-service/" target="_blank">Terms of Service</a> | <a href="http://www.dailyherald.com/info/privacy/" target="_blank">Privacy Policy</a> | <a href="http://www.dailyherald.com/info/terms-of-service/#copyright" target="_blank">Copyright © 2018 Paddock Publications, Inc.</a><br>
+      </small></p>
+    </div>
+  </div>
+</div>
+<div id="underfoot"></div>
+
+
+<script>
+
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>
+
+</body>
+</html>

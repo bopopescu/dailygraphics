@@ -1,0 +1,124 @@
+{% extends 'baseDH_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Soybeans in Illinois
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    <div class="row">
+        <div class="col-sm-8">
+          {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+          <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+          <strong><small>The map below is interactive: Zoom in or out, and <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+          </p>
+        </div>
+        <div class="col-sm-4">
+    <!-- Mapping portion -->
+       <style type="text/css">
+         div.bar {
+         display: inline-block;
+         width: 12px;
+         height: 12px;
+         border: 1px solid;
+         opacity: 0.8;
+         }
+         .FIRST {
+         background-color: #0072bc;
+         }
+         .SECOND {
+         background-color: #82a7c7;
+         }
+         .THIRD {
+         background-color: #9ddcf9;
+         }
+         .FOURTH {
+         background-color: #cee5b7;
+         }
+         .FIFTH {
+         background-color: #fff9b8;
+         }
+         .NODATA {
+         background-color: #fff;
+         }
+       </style>
+       <p><strong>2017 soybean production (bushels)</strong><br>
+        <div class="bar FIRST"></div> More than 9.1 million<br>
+        <div class="bar SECOND"></div> 7.17 to 9.1 million<br>
+        <div class="bar THIRD"></div> 5.5 to 7.17 million<br>
+        <div class="bar FOURTH"></div> 4.1 to 5.5 million<br>
+        <div class="bar FIFTH"></div> Less than 4.1 million<br>
+        <div class="bar NODATA"></div> No data<br>
+        </p>
+       </div>
+     </div>
+
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

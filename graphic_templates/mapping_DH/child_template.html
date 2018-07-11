@@ -1,0 +1,135 @@
+{% extends 'baseDH_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** standalone branding **** -->
+
+{% include 'headers/brand.html' %}
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <div class="row">
+        <div class="col-sm-8">
+          <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+          <strong><small>The map below is interactive: Zoom in or out, and <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+          </p>
+        </div>
+        <div class="col-sm-4">
+    <!-- Mapping portion -->
+       <style type="text/css">
+         div.bar {
+         display: inline-block;
+         width: 12px;
+         height: 12px;
+         border: 1px solid;
+         opacity: 0.8;
+         }
+         .FIRST {
+         background-color: #0072bc;
+         }
+         .SECOND {
+         background-color: #82a7c7;
+         }
+         .THIRD {
+         background-color: #9ddcf9;
+         }
+         .FOURTH {
+         background-color: #cee5b7;
+         }
+         .FIFTH {
+         background-color: #fff9b8;
+         }
+       </style>
+       <p><strong>Video gambling machines per 1,000 population</strong><br>
+        <div class="bar FIRST"></div> First.<br>
+        <div class="bar SECOND"></div> Second.<br>
+        <div class="bar THIRD"></div> Third.<br>
+        <div class="bar FOURTH"></div> Fourth.<br>
+        <div class="bar FIFTH"></div> Fifth.<br>
+        </p>
+       </div>
+     </div>
+
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- **************************** -->
+        <!-- *** Standalone gfx footer ** -->
+                <br>
+                </div>
+              </div>
+            </div>
+        {% include 'footers/footer.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

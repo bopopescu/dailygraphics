@@ -353,14 +353,6 @@ def clone_graphic(old_slug, slug=None):
               " with your current graphic libs & best-practices" % (old_slug)
 
 
-
-@task
-def add_highcharts(slug):
-    """
-    Create a bar chart.
-    """
-    _add_graphic(slug, 'highcharts')
-
 @task
 def add_highcharts_DH(slug):
     """
@@ -371,9 +363,16 @@ def add_highcharts_DH(slug):
 @task
 def add_datatables_DH(slug):
     """
-    Create a bar chart.
+    Create a datatables list.
     """
     _add_graphic(slug, 'datatables_DH')
+
+@task
+def add_mapping_DH(slug):
+    """
+    Create a leaflet map.
+    """
+    _add_graphic(slug, 'mapping_DH')
 
 @task
 def add_graphic(slug):

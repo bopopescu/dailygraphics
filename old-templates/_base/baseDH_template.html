@@ -1,0 +1,18 @@
+
+
+    {% block content %}
+
+        The child template content goes here!
+
+    {% endblock content %}
+
+    <script type="text/javascript" src="{{ PYM['pym_url'] }}"></script>
+    {% block js %}
+        {{ JS.push('js/lib/underscore.js') }}
+        {{ JS.push('js/base.js') }}
+        {{ JS.push('js/graphic.js') }}
+        {{ JS.render('js/graphic-footer.js') }}
+    {% endblock js %}
+
+</body>
+</html>
