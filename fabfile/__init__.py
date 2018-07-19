@@ -370,9 +370,16 @@ def add_datatables_DH(slug):
 @task
 def add_mapping_DH(slug):
     """
-    Create a leaflet map.
+    Create a leaflet map with geojson.
     """
     _add_graphic(slug, 'mapping_DH')
+
+@task
+def add_basicmap_DH(slug):
+    """
+    Create a basic leaflet map.
+    """
+    _add_graphic(slug, 'basicmap_DH')
 
 @task
 def add_graphic(slug):

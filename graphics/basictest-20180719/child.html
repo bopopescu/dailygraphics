@@ -1,0 +1,129 @@
+
+
+
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Daily Herald News Art">
+<meta name="keywords" content="Daily Herald, graphics, maps, data visualization, chicago, suburbs " />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta name="image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+
+<meta property="og:title" content="Daily Herald News Art" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta property="og:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta property="og:url" content="https://i.dailyherald.com/public-service/">
+<meta name="og:site_name" content="Daily Herald News Art">
+
+<meta name="twitter:title" content="Daily Herald News Art ">
+<meta name="twitter:description" content=" Special presentations, graphics, maps and other data visualizations by the Daily Herald.">
+<meta name="twitter:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>
+    Basic map
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- leaflet and highcharts -->
+    <link rel="stylesheet" href="../../static/css/leaflet.css" type="text/css">
+    <script src="../../static/js/leaflet.js"></script> <!-- adding leaflet -->
+
+
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+</head>
+<body> <!-- MUST -->
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+
+<div id="creditBox">
+      <p style="text-align:center"><small><a href="mailto:tbroderick@dailyherald.com">Tim Broderick</a> | <a href="https://i.dailyherald.com/public-service/" target="_blank">Daily Herald News Art</a> | <a href="https://github.com/dailyherald" target="_blank">Github</a></small></p>
+</div>
+
+
+<script>
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+<script>
+
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>
+
+
+
+    <script type="text/javascript" src="js/PHfire.js"></script>
+
+
+</body>
+</html>
