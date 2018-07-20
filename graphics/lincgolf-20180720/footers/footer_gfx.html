@@ -1,0 +1,16 @@
+
+<div id="creditBox">
+      <p style="text-align:center"><small><a href="mailto:tbroderick@dailyherald.com">Tim Broderick</a> | <a href="https://i.dailyherald.com/public-service/" target="_blank">Daily Herald News Art</a> | <a href="https://github.com/dailyherald" target="_blank">Github</a></small></p>
+</div>
+
+
+<script>
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>

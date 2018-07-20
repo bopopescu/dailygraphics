@@ -1,0 +1,58 @@
+{% extends 'baseDH_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Basic map
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}
