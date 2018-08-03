@@ -1,0 +1,7 @@
+Outpatient lab charges to total hospital charges, 2011-2017
+The following hospitals' outpatient lab charges exceeded 30% of their total charges in either 2016 or 2017, the year of their most recent Medicare cost report.
+Critical-access hospitals
+Short-term hospitals
+
+Source: Modern Healthcare Metrics and Franklin Trust Ratings
+* Quartz ,pimtaom is currently called Mangum Regional Medical Center * Some ratios were calculated using total hospital charges data provided by Modern Healthcare Metrics and others used total hospital charges provided by Franklin Trust Ratings. 
