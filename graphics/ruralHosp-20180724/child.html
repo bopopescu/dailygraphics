@@ -1,0 +1,461 @@
+
+
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Daily Herald News Art">
+<meta name="keywords" content="Daily Herald, graphics, maps, data visualization, chicago, suburbs " />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta name="image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+
+<meta property="og:title" content="Daily Herald News Art" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta property="og:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta property="og:url" content="https://i.dailyherald.com/public-service/">
+<meta name="og:site_name" content="Daily Herald News Art">
+
+<meta name="twitter:title" content="Daily Herald News Art ">
+<meta name="twitter:description" content=" Special presentations, graphics, maps and other data visualizations by the Daily Herald.">
+<meta name="twitter:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>
+    Rural hospitals
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables -->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+
+    <!-- datatables responsive -->
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- datatables responsive -->
+     <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+</head>
+<body> <!-- MUST -->
+
+<script>
+var DATA = [{"type": "Critical-access hospitals", "Hospital": "Dallas County Medical Center, Fordyce, Ark.", "y2011": "24", "y2012": "25.0", "y2013": "26.0", "y2014": "27.0", "y2015": "30.0", "y2016": "32.0", "y2017": "--", "percchg": "8"}, {"type": "Critical-access hospitals", "Hospital": "Mountain Lakes Medical Center, Clayton, Ga.", "y2011": "14", "y2012": "15.0", "y2013": "16.0", "y2014": "15.0", "y2015": "14.0", "y2016": "65.0", "y2017": "--", "percchg": "51"}, {"type": "Critical-access hospitals", "Hospital": "Mercy Hospital Columbus(Kan.)", "y2011": "--", "y2012": "29.0", "y2013": "39.0", "y2014": "44.0", "y2015": "45.0", "y2016": "48.0", "y2017": "41.0", "percchg": "12"}, {"type": "Critical-access hospitals", "Hospital": "Pointe Coupee General Hospital, New Roads, La.", "y2011": "23", "y2012": "23.0", "y2013": "31.0", "y2014": "31.0", "y2015": "32.0", "y2016": "31.0", "y2017": "--", "percchg": "8"}, {"type": "Critical-access hospitals", "Hospital": "I-70 Community Hospital, Sweet Springs, Mo.", "y2011": "14", "y2012": "14.0", "y2013": "14.0", "y2014": "15.0", "y2015": "14.0", "y2016": "15.0", "y2017": "32.0", "percchg": "18"}, {"type": "Critical-access hospitals", "Hospital": "Moses-Ludington Hospital, Ticonderoga, N.Y.", "y2011": "32", "y2012": "33.0", "y2013": "32.0", "y2014": "32.0", "y2015": "36.0", "y2016": "38.0", "y2017": "--", "percchg": "6"}, {"type": "Critical-access hospitals", "Hospital": "Washington County Hospital, Plymouth, N.C.", "y2011": "22", "y2012": "23.0", "y2013": "28.0", "y2014": "32.0", "y2015": "32.0", "y2016": "37.0", "y2017": "62.0", "percchg": "40"}, {"type": "Critical-access hospitals", "Hospital": "Drumright(Okla.) Regional Hospital", "y2011": "7", "y2012": "9.0", "y2013": "8.0", "y2014": "8.0", "y2015": "8.0", "y2016": "28.0", "y2017": "44.0", "percchg": "37"}, {"type": "Critical-access hospitals", "Hospital": "Quartz Mountain Medical Center,* Mangum, Okla.", "y2011": "15", "y2012": "10.0", "y2013": "6.0", "y2014": "6.0", "y2015": "19.0", "y2016": "53.0", "y2017": "--", "percchg": "38"}, {"type": "Critical-access hospitals", "Hospital": "De Smet(S.D) Memorial Hospital", "y2011": "--", "y2012": "37.0", "y2013": "38.0", "y2014": "35.0", "y2015": "35.0", "y2016": "34.0", "y2017": "31.0", "percchg": "-6"}, {"type": "Critical-access hospitals", "Hospital": "Bayside Community Hospital, Anahuac, Texas", "y2011": "30", "y2012": "33.0", "y2013": "36.0", "y2014": "39.0", "y2015": "35.0", "y2016": "36.0", "y2017": "33.0", "percchg": "3"}, {"type": "Critical-access hospitals", "Hospital": "Crane County Hospital District, Crane, Texas", "y2011": "31", "y2012": "34.0", "y2013": "31.0", "y2014": "30.0", "y2015": "29.0", "y2016": "34.0", "y2017": "30.0", "percchg": "-1"}, {"type": "Critical-access hospitals", "Hospital": "Rockdale(Texas) Hospital", "y2011": "13", "y2012": "10.0", "y2013": "6.0", "y2014": "7.0", "y2015": "62.0", "y2016": "86.0", "y2017": "--", "percchg": "73"}, {"type": "Short-term hospitals", "Hospital": "Georgiana(Ala.) Hospital", "y2011": "--", "y2012": "19.0", "y2013": "19.0", "y2014": "18.0", "y2015": "18.0", "y2016": "35.0", "y2017": "--", "percchg": "16"}, {"type": "Short-term hospitals", "Hospital": "Crenshaw Community Hospital, Luverne, Ala.", "y2011": "11", "y2012": "8.0", "y2013": "10.0", "y2014": "11.0", "y2015": "12.0", "y2016": "43.0", "y2017": "--", "percchg": "32"}, {"type": "Short-term hospitals", "Hospital": "Regional General Hospital, Williston, Fla.", "y2011": "--", "y2012": "--", "y2013": "--", "y2014": "7.0", "y2015": "8.0", "y2016": "78.0", "y2017": "78.0", "percchg": "71"}, {"type": "Short-term hospitals", "Hospital": "Stephens Memorial Hospital, Breckenridge, Texas", "y2011": "--", "y2012": "9.0", "y2013": "10.0", "y2014": "10.0", "y2015": "14.0", "y2016": "33.0", "y2017": "63.0", "percchg": "54"}, {"type": "Short-term hospitals", "Hospital": "Timberlands Hospital, Crockett, Texas", "y2011": "--", "y2012": "11.0", "y2013": "13.0", "y2014": "16.0", "y2015": "18.0", "y2016": "55.0", "y2017": "--", "percchg": "44"}, {"type": "Short-term hospitals", "Hospital": "Knox County Hospital, Knox City, Texas", "y2011": "20", "y2012": "17.0", "y2013": "17.0", "y2014": "17.0", "y2015": "17.0", "y2016": "17.0", "y2017": "68.0", "percchg": "48"}, {"type": "Short-term hospitals", "Hospital": "Stamford Memorial Hospital, Stamford, Texas", "y2011": "12", "y2012": "13.0", "y2013": "11.0", "y2014": "11.0", "y2015": "11.0", "y2016": "93.0", "y2017": "--", "percchg": "81"}, {"type": "Short-term hospitals", "Hospital": "ETMC Trinity, Trinity, Texas", "y2011": "--", "y2012": "19.0", "y2013": "19.0", "y2014": "21.0", "y2015": "25.0", "y2016": "31.0", "y2017": "39.0", "percchg": "20"}];
+
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      responsive: true,
+      "order": [[ 8, "desc" ]],
+      "iDisplayLength": 7
+      } );
+} );
+
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+    <h2><strong>Outpatient lab charges<br><small>As a percent of total hospital charges, 2011-2017</small></strong></h2>
+    <p><strong>A lab processing strategy that could potentially draw higher reimbursement from commercial payers is likely behind big increases in rural hospital charges.</strong> Here are hospitals whose outpatient lab charges exceeded 30% of their total charges in either 2016 or 2017, the year of their most recent Medicare cost report.</p>
+
+    <!-- Mapping portion -->
+       <style type="text/css">
+         div.bar {
+         display: inline-block;
+         width: 12px;
+         height: 12px;
+         /* border: 1px solid;
+         opacity: 0.8; */
+         }
+         .FIRST {
+         background-color: #0072BC;
+         }
+         .SECOND {
+         background-color: #9DDCF9;
+         }
+         .THIRD {
+         background-color: #EBAB38;
+         }
+         .FOURTH {
+         background-color: #FECF8D;
+         }
+       </style>
+        <p><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></p>
+        <p><table><tbody><tr><td><div class="bar FIRST"></div><div class="bar SECOND"></div> Critical-access hospitals </td><td>&nbsp &nbsp<div class="bar THIRD"></div><div class="bar FOURTH"></div> Short-term hospitals</td></tr></tbody></table></p>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+<br>
+<p><small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column headings, or <span style="color:red">look for your hospital</span> using the search box. You can also <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='1'>Hospital</th>
+        <th data-priority='5'>2011</th>
+        <th data-priority='5'>2012</th>
+        <th data-priority='6'>2013</th>
+        <th data-priority='6'>2014</th>
+        <th data-priority='4'>2015</th>
+        <th data-priority='4'>2016</th>
+        <th data-priority='3'>2017</th>
+        <th data-priority='2'>%-point<br>change*</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Dallas County Medical Center, Fordyce, Ark.</td>
+            <td>24</td>
+            <td>25.0</td>
+            <td>26.0</td>
+            <td>27.0</td>
+            <td>30.0</td>
+            <td>32.0</td>
+            <td>--</td>
+            <td>8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Mountain Lakes Medical Center, Clayton, Ga.</td>
+            <td>14</td>
+            <td>15.0</td>
+            <td>16.0</td>
+            <td>15.0</td>
+            <td>14.0</td>
+            <td>65.0</td>
+            <td>--</td>
+            <td>51</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Mercy Hospital Columbus(Kan.)</td>
+            <td>--</td>
+            <td>29.0</td>
+            <td>39.0</td>
+            <td>44.0</td>
+            <td>45.0</td>
+            <td>48.0</td>
+            <td>41.0</td>
+            <td>12</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Pointe Coupee General Hospital, New Roads, La.</td>
+            <td>23</td>
+            <td>23.0</td>
+            <td>31.0</td>
+            <td>31.0</td>
+            <td>32.0</td>
+            <td>31.0</td>
+            <td>--</td>
+            <td>8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> I-70 Community Hospital, Sweet Springs, Mo.</td>
+            <td>14</td>
+            <td>14.0</td>
+            <td>14.0</td>
+            <td>15.0</td>
+            <td>14.0</td>
+            <td>15.0</td>
+            <td>32.0</td>
+            <td>18</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Moses-Ludington Hospital, Ticonderoga, N.Y.</td>
+            <td>32</td>
+            <td>33.0</td>
+            <td>32.0</td>
+            <td>32.0</td>
+            <td>36.0</td>
+            <td>38.0</td>
+            <td>--</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Washington County Hospital, Plymouth, N.C.</td>
+            <td>22</td>
+            <td>23.0</td>
+            <td>28.0</td>
+            <td>32.0</td>
+            <td>32.0</td>
+            <td>37.0</td>
+            <td>62.0</td>
+            <td>40</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Drumright(Okla.) Regional Hospital</td>
+            <td>7</td>
+            <td>9.0</td>
+            <td>8.0</td>
+            <td>8.0</td>
+            <td>8.0</td>
+            <td>28.0</td>
+            <td>44.0</td>
+            <td>37</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Quartz Mountain Medical Center,* Mangum, Okla.</td>
+            <td>15</td>
+            <td>10.0</td>
+            <td>6.0</td>
+            <td>6.0</td>
+            <td>19.0</td>
+            <td>53.0</td>
+            <td>--</td>
+            <td>38</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> De Smet(S.D) Memorial Hospital</td>
+            <td>--</td>
+            <td>37.0</td>
+            <td>38.0</td>
+            <td>35.0</td>
+            <td>35.0</td>
+            <td>34.0</td>
+            <td>31.0</td>
+            <td>-6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Bayside Community Hospital, Anahuac, Texas</td>
+            <td>30</td>
+            <td>33.0</td>
+            <td>36.0</td>
+            <td>39.0</td>
+            <td>35.0</td>
+            <td>36.0</td>
+            <td>33.0</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Crane County Hospital District, Crane, Texas</td>
+            <td>31</td>
+            <td>34.0</td>
+            <td>31.0</td>
+            <td>30.0</td>
+            <td>29.0</td>
+            <td>34.0</td>
+            <td>30.0</td>
+            <td>-1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar FIRST"></div> Rockdale(Texas) Hospital</td>
+            <td>13</td>
+            <td>10.0</td>
+            <td>6.0</td>
+            <td>7.0</td>
+            <td>62.0</td>
+            <td>86.0</td>
+            <td>--</td>
+            <td>73</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Georgiana(Ala.) Hospital</td>
+            <td>--</td>
+            <td>19.0</td>
+            <td>19.0</td>
+            <td>18.0</td>
+            <td>18.0</td>
+            <td>35.0</td>
+            <td>--</td>
+            <td>16</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Crenshaw Community Hospital, Luverne, Ala.</td>
+            <td>11</td>
+            <td>8.0</td>
+            <td>10.0</td>
+            <td>11.0</td>
+            <td>12.0</td>
+            <td>43.0</td>
+            <td>--</td>
+            <td>32</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Regional General Hospital, Williston, Fla.</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>7.0</td>
+            <td>8.0</td>
+            <td>78.0</td>
+            <td>78.0</td>
+            <td>71</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Stephens Memorial Hospital, Breckenridge, Texas</td>
+            <td>--</td>
+            <td>9.0</td>
+            <td>10.0</td>
+            <td>10.0</td>
+            <td>14.0</td>
+            <td>33.0</td>
+            <td>63.0</td>
+            <td>54</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Timberlands Hospital, Crockett, Texas</td>
+            <td>--</td>
+            <td>11.0</td>
+            <td>13.0</td>
+            <td>16.0</td>
+            <td>18.0</td>
+            <td>55.0</td>
+            <td>--</td>
+            <td>44</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Knox County Hospital, Knox City, Texas</td>
+            <td>20</td>
+            <td>17.0</td>
+            <td>17.0</td>
+            <td>17.0</td>
+            <td>17.0</td>
+            <td>17.0</td>
+            <td>68.0</td>
+            <td>48</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> Stamford Memorial Hospital, Stamford, Texas</td>
+            <td>12</td>
+            <td>13.0</td>
+            <td>11.0</td>
+            <td>11.0</td>
+            <td>11.0</td>
+            <td>93.0</td>
+            <td>--</td>
+            <td>81</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><div class="bar THIRD"></div> ETMC Trinity, Trinity, Texas</td>
+            <td>--</td>
+            <td>19.0</td>
+            <td>19.0</td>
+            <td>21.0</td>
+            <td>25.0</td>
+            <td>31.0</td>
+            <td>39.0</td>
+            <td>20</td>
+        </tr>
+        
+    </tbody>
+  </table>
+  <br>
+    
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p><i>* Percentage-point change from earliest year available to latest year available, 2011-2017. </i><br>Note: Quartz, pimtaom is currently called Mangum Regional Medical Center <br>Some ratios were calculated using total hospital charges data provided by Modern Healthcare Metrics and others used total hospital charges provided by Franklin Trust Ratings. </p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare Metrics and Franklin Trust Ratings</i></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+<div id="creditBox">
+      <p style="text-align:center"><small><a href="mailto:tbroderick@dailyherald.com">Tim Broderick</a> | <a href="https://i.dailyherald.com/public-service/" target="_blank">Daily Herald News Art</a> | <a href="https://github.com/dailyherald" target="_blank">Github</a></small></p>
+</div>
+
+
+<script>
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>
+
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1533736255"></script>
+
+
+</body>
+</html>

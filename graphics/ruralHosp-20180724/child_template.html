@@ -21,6 +21,16 @@
 
 <script>
 var DATA = {{ COPY.data.json() }};
+
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      responsive: true,
+      "order": [[ 8, "desc" ]],
+      "iDisplayLength": 7
+      } );
+} );
+
 </script>
 
 <style type="text/css">
@@ -36,8 +46,7 @@ var DATA = {{ COPY.data.json() }};
       <div class="col-md-12">
 
     {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
-    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
-    <strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></p>
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
 
     <!-- Mapping portion -->
        <style type="text/css">
@@ -61,12 +70,44 @@ var DATA = {{ COPY.data.json() }};
          background-color: #FECF8D;
          }
        </style>
-       <p><div class="bar FIRST"></div><div class="bar SECOND"></div> Critical-access hospitals<br>
-        <div class="bar THIRD"></div><div class="bar FOURTH"></div> Short-term hospitals</p>
+        <p><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></p>
+        <p><table><tbody><tr><td><div class="bar FIRST"></div><div class="bar SECOND"></div> Critical-access hospitals </td><td>&nbsp &nbsp<div class="bar THIRD"></div><div class="bar FOURTH"></div> Short-term hospitals</td></tr></tbody></table></p>
     <div id="graphic" class="graphic">
             <img src="fallback.png" alt="[Chart]" class="fallback" />
     </div>
+<br>
+<p><small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column headings, or <span style="color:red">look for your hospital</span> using the search box. You can also <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
 
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='1'>Hospital</th>
+        <th data-priority='5'>2011</th>
+        <th data-priority='5'>2012</th>
+        <th data-priority='6'>2013</th>
+        <th data-priority='6'>2014</th>
+        <th data-priority='4'>2015</th>
+        <th data-priority='4'>2016</th>
+        <th data-priority='3'>2017</th>
+        <th data-priority='2'>%-point<br>change*</th>
+      </thead>
+      <tbody>
+
+        {% for row in COPY.data %}
+        <tr>
+            <td class="tdLEFT">{% if row.type == 'Critical-access hospitals' %}<div class="bar FIRST"></div> {% else %}<div class="bar THIRD"></div> {% endif %}{{ row.Hospital }}</td>
+            <td>{{ row.y2011 }}</td>
+            <td>{{ row.y2012 }}</td>
+            <td>{{ row.y2013 }}</td>
+            <td>{{ row.y2014 }}</td>
+            <td>{{ row.y2015 }}</td>
+            <td>{{ row.y2016 }}</td>
+            <td>{{ row.y2017 }}</td>
+            <td>{{ row.percchg }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <br>
     {% if COPY.labels.footnote %}
     <div class="footnotes">
         <h4><strong>Notes</strong></h4>
@@ -76,7 +117,6 @@ var DATA = {{ COPY.data.json() }};
 
     <div class="footer">
         {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
-        {% if COPY.labels.credit %}<p class="gfxcredit">Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
     </div>
 
 
