@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Daily Herald News Art">
+<meta name="keywords" content="Daily Herald, graphics, maps, data visualization, chicago, suburbs " />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta name="image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+
+<meta property="og:title" content="Daily Herald News Art" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by the Daily Herald." />
+<meta property="og:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta property="og:url" content="https://i.dailyherald.com/public-service/">
+<meta name="og:site_name" content="Daily Herald News Art">
+
+<meta name="twitter:title" content="Daily Herald News Art ">
+<meta name="twitter:description" content=" Special presentations, graphics, maps and other data visualizations by the Daily Herald.">
+<meta name="twitter:image" content="https://i.dailyherald.com/public-service/static/img/DHmarble.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>
+    Givers and getters
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+</head>
+<body> <!-- MUST -->
+
+<script>
+var DATA = [{"state": "Alabama", "something": "2", "another_thing": "1819"}, {"state": "Alaska", "something": "4", "another_thing": "1958"}, {"state": "Arizona", "something": "6", "another_thing": "1912"}, {"state": "Arkansas", "something": "8", "another_thing": "1836"}, {"state": "California", "something": "10", "another_thing": "1850"}, {"state": "Colorado", "something": "12", "another_thing": "1876"}, {"state": "Connecticut", "something": "14", "another_thing": "1788"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+<!-- **************************** -->
+<!-- *** begin content ********** -->
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 divgfx"> <!-- remove divgfx for non-scrolling div -->
+
+    <h2><strong>Giving and getting</strong></h2>
+          <p>In 24 Illinois counties, including all of the Chicago area, taxpayers contribute more to the state in taxes than what comes back in programs and services. The other 78 counties, largely in southern and west central Illinois, get more from the state than their taxpayers pay in, says a study by the Paul Simon Public Policy Institute at Southern Illinois University at Carbondale.<br>
+          <strong><small>The map below is interactive: Zoom in or out, and <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+          </p>
+    <!-- Mapping portion -->
+       <style type="text/css">
+         div.bar {
+         display: inline-block;
+         width: 12px;
+         height: 12px;
+         border: 1px solid;
+         opacity: 0.8;
+         }
+         .FIRST {
+         background-color: #e31a1c;
+         }
+         .SECOND {
+         background-color: #ff7f00;
+         }
+         .THIRD {
+         background-color: #fdbf6f;
+         }
+         .FOURTH {
+         background-color: #97d5c9;
+         }
+         .FIFTH {
+         background-color: #028575;
+         }
+         .SIXTH {
+         background-color: #00473d;
+         }
+       </style>
+       <div class="row">
+           <div class="col-xs-6">
+           <p><strong>Counties giving more than they get back,</strong> for every dollar paid to the state<br>
+            <div class="bar FIRST"></div> Less than 31 cents.<br>
+            <div class="bar SECOND"></div> 32 to 68 cents.<br>
+            <div class="bar THIRD"></div> 69 to 99 cents.<br>
+            </p>
+          </div>
+          <div class="col-xs-6">
+            <p><strong>Counties getting more than they give,</strong> for every dollar paid to the state</strong><br>
+             <div class="bar FOURTH"></div> $1 to $2.16.<br>
+             <div class="bar FIFTH"></div> $2.17 to $6.<br>
+             <div class="bar SIXTH"></div> More than $6.<br>
+             </p>
+           </div>
+         </div>
+
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>For all counties, amount in spending they receive per dollar in taxes paid. 1 would mean a county received $1 back per $1 paid.</p>
+    </div>
+
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: &#8220;The Politics of Public Budgeting in Illinois,&#8221; The Simon Review. <a href="https://opensiuc.lib.siu.edu/ppi_papers/53">opensiuc.lib.siu.edu/ppi_papers/53</a></i></p>
+
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+
+<div id="creditBox">
+      <p style="text-align:center"><small><a href="mailto:tbroderick@dailyherald.com">Tim Broderick</a> | <a href="https://i.dailyherald.com/public-service/" target="_blank">Daily Herald News Art</a> | <a href="https://github.com/dailyherald" target="_blank">Github</a></small></p>
+</div>
+
+
+<script>
+$.ajaxSetup({ cache: false});
+
+window.parent.postMessage({
+  sentinel: 'amp',
+  type: 'embed-size',
+  height: document.body.scrollHeight
+}, '*');
+
+</script>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">---</span></p>
+            <p><span style="color:white;">-30-</span></p>
+            </div>
+          </div>
+        </div>
+
+
+    <script type="text/javascript" src="js/giving.js"></script>
+
+
+</body>
+</html>

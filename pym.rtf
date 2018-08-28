@@ -1,0 +1,70 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Some basic `pym.js` help needed.\
+In a child page I'm using the jQuery `$(document).ready(function()\{ ... \});` but I need `pym` to wait until after the `$(document).ready()` before it figures out the depth. I think what I'm after is fairly easy but my JS fu is weak.\
+Here's what I've got that isn't working:\
+```<script>\
+    $(document).ready(function()\{\
+        ... stuff here ... \
+    \});\
+</script>\
+\
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>\
+<script>var pymChildRoster = new pym.Child();</script>```\
+\
+brentajones [12:52 PM]\
+I usually fix this for ours with trial and error, so I\'92m not sure how much help I\'92ll be.\
+\
+There\'92s a sendHeight command that might work. Also there\'92s a polling option, which will continually send the height (super-overkill but it\'92s a last resort).\
+\
+aalbright [12:54 PM]\
+Perhaps put the `new pym.Child()` inside `$(window).load(function()\{ ... \})`? `.load()` usually won\'92t fire till after `ready()`. Although in my experience, even getting depth after `.load()` is definitely trial and error.\
+\
+chris [12:55 PM]\
+Maybe something like this?\
+\
+```<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>\
+\
+<script>\
+    var pymChildRoster = new pym.Child();\
+\
+    $(document).ready(function()\{\
+        pymChildRoster.sendHeight();\
+        ... stuff here ... \
+    \});\
+</script>```\
+\
+shmcminn [12:56 PM]\
+I run this at the bottom of my child pages, which is absolutely @brentajones\'92s version of super-overkill\
+    ```var pymChild = new pym.Child();\
+    \
+    window.setInterval(function()\{\
+      pymChild.sendHeight()\
+    \}, 1000);```\
+\
+jheasly [1:37 PM]\
+Oh-kay! *Thanks* for all your replies!\
+Here's what ended up working:\
+```<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>\
+<script>\
+    var pymChildRoster = new pym.Child();\
+\
+    $(document).ready(function()\{\
+        ... stuff here ... \
+\
+        pymChildRoster.sendHeight();\
+    \});\
+</script>```\
+(edited)\
+\
+jheasly [1:39 PM]\
+Basically it's @chris ' suggestion of moving the loading of `pym` up higher, then running the `.sendHeight` within the jQuery event, but at the end. When I put `pymChildRoster.sendHeight();` at the top of the function, it didn't work. Put it last, it did.\
+\
+jheasly [1:41 PM]\
+Also, trying @aalbright\'92s suggestion, I tried `$(window).on("load", function()\{ ... \};` and that works as well. So, pym doesn't seem to care if it's `$(window).on("load", ...`  or `$(document).ready( ...` \
+Big thanks again! Y'all are the best.}
