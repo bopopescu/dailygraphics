@@ -1,6 +1,8 @@
 https://github.com/nprapps/dailygraphics
 
-This is my fork of NPR's dailygraphics Rig. It adds templates for highcharts, datatables and leaflet maps.
+This is my fork of NPR's dailygraphics Rig.
+
+It adds templates for highcharts, datatables and leaflet maps. 
 
 
 dailygraphics
