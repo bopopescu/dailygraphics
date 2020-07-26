@@ -71,10 +71,10 @@ blank_re = re.compile(r'^[ \t\f]*(?:[#\r\n]|$)')
 
 class EncodingMessage(SimpleDialog):
     "Inform user that an encoding declaration is needed."
-    def __init__(self, master, enc):
+    def __init__(self, main, enc):
         self.should_edit = False
 
-        self.root = top = Toplevel(master)
+        self.root = top = Toplevel(main)
         top.bind("<Return>", self.return_event)
         top.bind("<Escape>", self.do_ok)
         top.protocol("WM_DELETE_WINDOW", self.wm_delete_window)
@@ -108,7 +108,7 @@ class EncodingMessage(SimpleDialog):
                     command=self.do_edit)
         b2.pack(side=LEFT, fill=BOTH, expand=1)
 
-        self._set_transient(master)
+        self._set_transient(main)
 
     def do_ok(self):
         self.done(0)
